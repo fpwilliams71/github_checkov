@@ -1,0 +1,12 @@
+---
+metadata:
+  name: "Ensure storage bucket account name has no special characters"
+  id: "CKV2_GCP_LG_CUSTOM_008"
+  category: "Storage"
+definition:
+  cond_type: "attribute"
+  resource_types:
+    - "google_storage_bucket"
+  attribute: "name"
+  operator: regex_match
+  value: "^[a-z0-9]{3,24}$"
