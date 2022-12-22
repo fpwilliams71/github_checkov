@@ -1,5 +1,7 @@
 ---
 # This is the checkov workflow with actions
+# To get the value of LW_IAC_ORGANIZATION, login into "Laceworks IaC UI" https://app.soluble.cloud and authenticate with personal GitHub credentials.
+# To get the value of SOLUBLE_API_TOKEN, go to the URL https://app.soluble.cloud/admin/tokens/access and generate an access token.
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
   # checkov-job:
@@ -28,5 +30,5 @@ jobs:
         uses: actions/checkout@master
       - name: pull the soluble cli container docker
         run: docker pull ryansheldrakelw/soluble-scan
-      - name: Run the docker container. Instrcutions in last email from Ryan on the dockerhub page
+      - name: Run the docker container. Instructions in last email from Ryan on the dockerhub page
         run: docker run -t -v $(pwd):/tmp/soluble-temp -e SOLUBLE_API_TOKEN="eyJraWQiOiJzand0LWEyYTM1YmFlIiwiYWxnIjoiSFMyNTYifQ.eyJhdWQiOiJ1c2VyIiwiZXhwIjo0MTAyNDQ0ODAwLCJpYXQiOjE2NzExNDIyOTYsInN1YiI6InUtNWZkYjliMjI5Y2YxOTNkYyIsIm9yZyI6IjI2MjI0MDcyMDUwMiJ9.R4CcKn7OuuBXkyoK1wJVTyMHi3QsXC4NOpAso9TSThw" -e LW_IAC_ORGANIZATION="262240720502" ryansheldrakelw/soluble-scan
