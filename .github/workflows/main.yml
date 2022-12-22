@@ -26,8 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     name: soluble-cli-scan
     steps:
-      # - name: Checkout repo
-      #   uses: actions/checkout@master
+      - name: Checkout repo
+        uses: actions/checkout@master
       # - name: pull the soluble cli container docker
       #   run: docker pull ryansheldrakelw/soluble-scan
       - name: Run the docker container. Instructions in last email from Ryan on the dockerhub page
