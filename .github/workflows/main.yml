@@ -31,5 +31,5 @@ jobs:
       # - name: pull the soluble cli container docker
       #   run: docker pull ryansheldrakelw/soluble-scan
       - name: Run the docker container. Instructions in last email from Ryan on the dockerhub page
-        run: docker run -t -v $(pwd):/tmp/soluble-temp -e SOLUBLE_API_TOKEN="eyJraWQiOiJzand0LWEyYTM1YmFlIiwiYWxnIjoiSFMyNTYifQ.eyJhdWQiOiJ1c2VyIiwiZXhwIjo0MTAyNDQ0ODAwLCJpYXQiOjE2NzExNDIyOTYsInN1YiI6InUtNWZkYjliMjI5Y2YxOTNkYyIsIm9yZyI6IjI2MjI0MDcyMDUwMiJ9.R4CcKn7OuuBXkyoK1wJVTyMHi3QsXC4NOpAso9TSThw" -e LW_IAC_ORGANIZATION="${{secrets.LW_IAC_ORGANIZATION}}" ryansheldrakelw/soluble-scan
+        run: docker run -t -v $(pwd):/tmp/soluble-temp -e SOLUBLE_API_TOKEN="$SOLUBLE_API_TOKEN" -e LW_IAC_ORGANIZATION="$LW_IAC_ORGANIZATION" ryansheldrakelw/soluble-scan
         # run: docker run -t -v $(pwd):/tmp/soluble-temp -e SOLUBLE_API_TOKEN="eyJraWQiOiJzand0LWEyYTM1YmFlIiwiYWxnIjoiSFMyNTYifQ.eyJhdWQiOiJ1c2VyIiwiZXhwIjo0MTAyNDQ0ODAwLCJpYXQiOjE2NzExNDIyOTYsInN1YiI6InUtNWZkYjliMjI5Y2YxOTNkYyIsIm9yZyI6IjI2MjI0MDcyMDUwMiJ9.R4CcKn7OuuBXkyoK1wJVTyMHi3QsXC4NOpAso9TSThw" -e LW_IAC_ORGANIZATION="262240720502" ryansheldrakelw/soluble-scan
